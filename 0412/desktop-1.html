@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+            body {
+              font-family: Arial, Helvetica, sans-serif;
+              font-size: 20px;
+              height:2000px;
+            }
+            
+            #myBtn {
+              
+              position: fixed;
+              bottom: 20px;
+              right: 30px;
+              z-index: 99;
+              font-size: 18px;
+              border: none;
+              outline: none;
+              background-color: red;
+              color: white;
+              cursor: pointer;
+              padding: 15px;
+              border-radius: 4px;
+            }
+            
+            #myBtn:hover {
+              background-color: #555;
+            }
+            .none{
+                display: none;
+            }
+            </style>
+</head>
+<body>
+    <button id="myBtn" class="none">top</button>
+    <script>
+        var w = window
+        var btn = document.querySelector ('#myBtn');
+
+        w.addEventListener('scroll',scrollheadler)
+        btn.addEventListener('click',clickheadler)
+
+        function scrollheadler() {
+        if (document.documentElement.scrollTop > 20){
+            btn.classList.add('block')
+            btn.classList.remove('none')
+
+        }else{
+            btn.classList.remove('block')
+            btn.classList.add('none')
+        }
+        }
+
+
+
+        function clickheadler() {
+            document.documentElement.scrollTop = 0;
+            
+
+        }
+
+
+        
+
+
+
+
+    </script>
+    
+
+
+</body>
+</html>
